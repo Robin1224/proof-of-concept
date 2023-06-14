@@ -31,8 +31,8 @@ app.get("/", (req, res) => {
 }
 );
 
-app.get("/api", (req, res) => {
-  res.send("Hello API!");
+app.get("/dt1", (req, res) => {
+  res.render("deeltaak-1", {  }); // render the index.ejs file
 }
 );
 
