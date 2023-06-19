@@ -27,12 +27,14 @@ const port = process.env.PORT || 3000;
 app.get("/", (req, res) => {
   // const url = process.env.API_URL; // get the api url from the .env file
   
-  res.render("index", {  }); // render the index.ejs file
+  res.render("name", {  }); // render the name.ejs file
 }
 );
 
-app.get("/dt1", (req, res) => {
-  res.render("deeltaak-1", {  }); // render the index.ejs file
+app.get("/options", (req, res) => {
+  // const url = process.env.API_URL; // get the api url from the .env file
+  const name = req.query.name;
+  res.render("options", { name: name }); // render the name.ejs file
 }
 );
 

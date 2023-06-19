@@ -1,9 +1,28 @@
-body {
-  font-family: 'Helvetica Neue Light', sans-serif;
-  color: #222222;
+:root {
+  --gray-1: #fbfbfb;
+  --gray-2: #d2d2d2;
+  --gray-3: #abaaac;
+  --gray-4: #5f5f64;
+  --black: #222222;
+
+  --highlight: #4242FC;
+  --accent: #e4dfd5;
+
+  --text-size-1: 2.3331rem;
+  --text-size-2: 2rem;
+  --text-size-3: 1.5rem;
+  --text-size-4: 0.9169rem;
+  --text-size-5: 0.75rem;
+  --text-size-6: 0.5rem;
 }
 
-aside.dt1 > .logo {
+body {
+  font-family: 'Helvetica Neue Light', sans-serif;
+  color: var(--black);
+  display: flex;
+}
+
+.logo {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -13,53 +32,112 @@ aside.dt1 > .logo {
   margin: 3rem;
 }
 
-aside.dt1 > .logo > img {
+.logo > img {
   width: 6rem;
   height: auto;
 }
 
-aside.dt1 > .logo > span {
-  font-size: 0.6667rem;
+.logo > span {
+  font-size: var(--text-size-5);
   margin-top: 0.5rem;
   color: #abaaac;
 }
 
-aside.dt1 > .progress-list {
+.progress-list {
   margin-left: 1.5rem;
 }
 
-aside.dt1 > .progress-list > li {
+.progress-list > li {
   display: flex;
   color: #5f5f64;
   font-size: 0.8rem;
   padding-top: 0.2rem;
 }
 
-aside.dt1 > .progress-list > li > object {
+.progress-list object {
   width: 0.4rem; 
   height: 0.4rem;
   margin-top: 0.25rem;
   padding-right: 0.5rem;
 }
 
-main.dt1 {
-  display: flex;
-  flex-direction: column;
+main {
+  display: grid;
+  place-content: center;
   margin-left: 3rem;
-  margin-right: 3rem;
+  height: 100vh;
 }
 
-main.dt1 > h1 {
-  font-size: 2.3333rem;
+.content-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10vw;
+}
+
+.content-container > h1 {
+  font-size: var(--text-size-1);
   margin: 0;
 }
 
-main.dt1 > h2 {
-  font-size: 2.3333rem;
+.content-container > h2 {
+  font-size: var(--text-size-1);
   color: #abaaac;
   margin: 0;
 }
 
+.name-form {
+  display: flex;
+}
+
+.options-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+
+.options-form label {
+  font-size: var(--text-size-4);
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+}
+
+.options-form input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+
+  margin: 0;
+  font: inherit;
+  color: var(--black);
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 0.1rem solid var(--black);
+  border-radius: 50%;
+  transform: translateY(0.1rem);
+  display: grid;
+  place-content: center;
+}
+
+.options-form input[type="checkbox"]::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  border-radius: 50%;
+  background-color: var(--black);
+}
+
+.options-form input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.options-form button {
+  margin-top: 4rem;
+}
+
 .highlight-colour {
-  color: #4242FC !important;
+  color: var(--highlight) !important;
 }

@@ -1,0 +1,17 @@
+<%- include("./partials/head.ejs") %> 
+<%- include("./partials/sidebar.ejs", {page: "name"}) %>
+
+<main class="name">
+  <div class="content-container">
+    <h2>Let's get you signed up for lunch this week.</h2>
+    <h1>First, what is your <span class="highlight-colour">name</span>?</h1>
+    <form class="name-form" id="name-form">
+      <input type="text" name="name" placeholder="Your name" id="name-input" required />
+      <button type="submit">Continue →</button>
+    </form>
+  </div>
+</main>
+
+<script src="/scripts/name.js" type="module" defer></script>
+
+<%- include("./partials/foot.ejs") %>

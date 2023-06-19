@@ -1,0 +1,66 @@
+<%- include("./partials/head.ejs") %> 
+<%- include("./partials/sidebar.ejs", {page: "options"}) %>
+
+<main class="options">
+  <div class="content-container">
+    <h2>We're glad you'll be joining us for lunch again, <%= name %>.</h2>
+    <h1>Now, let's review your <span class="highlight-colour">options</span>.</h1>
+
+    <form class="options-form" id="options-form">
+      <span class="lunchdays-label">Lunch days</span>
+      <label class="checkbox-container">
+        <input type="checkbox" name="monday" id="checkbox-monday" />
+        Monday
+      </label>
+    
+      <label class="checkbox-container">
+        <input type="checkbox" name="tuesday" id="checkbox-tuesday" />
+        Tuesday
+      </label>
+    
+      <label class="checkbox-container">
+        <input type="checkbox" name="wednesday" id="checkbox-wednesday" />
+        Wednesday
+      </label>
+    
+      <label class="checkbox-container">
+        <input type="checkbox" name="thursday" id="checkbox-thursday" />
+        Thursday
+      </label>
+    
+      <label class="checkbox-container">
+        <input type="checkbox" name="friday" id="checkbox-friday" />
+        Friday
+      </label>
+
+      <span class="allergies-label">Allergies</span>
+
+      <label class="checkbox-container">
+        <input type="checkbox" name="gluten" id="checkbox-gluten" />
+        Gluten
+      </label>
+
+      <label class="checkbox-container">
+        <input type="checkbox" name="peanuts" id="checkbox-peanuts" />
+        Peanuts
+      </label>
+
+      <label class="checkbox-container">
+        <input type="checkbox" name="soy" id="checkbox-soy" />
+        Soy
+      </label>
+
+      <label class="checkbox-container">
+        <input type="checkbox" name="nuts" id="checkbox-nuts" />
+        (Tree) nuts
+      </label>
+      
+      <button type="submit">Continue →</button>
+    </form>
+    
+  </div>
+</main>
+
+<script src="/scripts/options.js" type="module" defer></script>
+
+<%- include("./partials/foot.ejs") %>

@@ -1,0 +1,57 @@
+<aside class="name">
+  <div class="logo">
+    <img src="/assets/images/random-studio.png" alt="Random Studio Logo" />
+    <span>Lunch sign-up</span>
+  </div>
+
+  <ul class="progress-list">
+    <li>
+      <% if (page == "name") { %>
+        <object type="image/svg+xml" data="/assets/images/dot.svg" class="dot">
+          >
+        </object>
+      <% } else { %>
+        <object type="image/svg+xml" data="/assets/images/dot-hollow.svg" class="dot">
+          •
+        </object>
+      <% } %>
+      <span>Name</span>
+    </li>
+    <li>
+      <% if (page == "options") { %>
+        <object type="image/svg+xml" data="/assets/images/dot.svg" class="dot">
+          >
+        </object>
+      <% } else { %>
+        <object type="image/svg+xml" data="/assets/images/dot-hollow.svg" class="dot">
+          •
+        </object>
+      <% } %>
+      <span>Options</span>
+    </li>
+    <li>
+      <% if (page == "guests") { %>
+        <object type="image/svg+xml" data="/assets/images/dot.svg" class="dot">
+          >
+        </object>
+      <% } else { %>
+        <object type="image/svg+xml" data="/assets/images/dot-hollow.svg" class="dot">
+          •
+        </object>
+      <% } %>
+      <span>Guests</span>
+    </li>
+    <li>
+      <% if (page == "confirmation") { %>
+        <object type="image/svg+xml" data="/assets/images/dot.svg" class="dot">
+          >
+        </object>
+      <% } else { %>
+        <object type="image/svg+xml" data="/assets/images/dot-hollow.svg" class="dot">
+          •
+        </object>
+      <% } %>
+      <span>Confirmation</span>
+    </li>
+  </ul>
+</aside>
