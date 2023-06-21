@@ -34,14 +34,14 @@ app.get("/", (req, res) => {
 app.get("/options", (req, res) => {
   // const url = process.env.API_URL; // get the api url from the .env file
   const name = req.query.name;
-  res.render("options", { name: name }); // render the name.ejs file
+  res.render("options", { name: name }); // render the options.ejs file
 }
 );
 
 app.get("/guests", (req, res) => {
   // const url = process.env.API_URL; // get the api url from the .env file
   const data = req.query;
-  res.render("guests", data); // render the name.ejs file
+  res.render("guests", data); // render the options.ejs file
 }
 );
 

@@ -89,6 +89,13 @@ main {
   display: flex;
 }
 
+.name-form input {
+  border-radius: 1rem;
+  height: 1.3rem;
+  width: 24rem;
+  padding: 0.5rem;
+}
+
 .options-form {
   display: flex;
   flex-direction: column;
