@@ -1,18 +1,67 @@
 <%- include("./partials/head.ejs") %> <%- include("./partials/sidebar.ejs",
-{page: "guests"}) %>
+{page: "confirmation"}) %>
 
 <main>
   <div class="content-container">
+    <h2>Before we finish,</h2>
+    <h1>
+      let's <span class="highlight-colour">confirm</span> your options.
+    </h1>
+
     <h4 class="confirmation-name">
-      <span><%- data.name %></span>
+      <span><%- name %></span>
     </h4>
-    <h4 class="confirmation-days">
-      <% Object.keys(data.d).forEach(key => { %>
-        <% console.log(key, data.d[key]); %>
-       
-      <% }) %>
-      <span><%- data.name %></span>
-    </h4>
+    <h4 class="confirmation-days">Days</h4>
+
+    <ul>
+      <% if (d[0] > 0) { %>
+        <li><span>Monday</span></li>
+      <% } %>
+
+      <% if (d[1] > 0) { %>
+        <li><span>Tuesday</span></li>
+      <% } %>
+
+      <% if (d[2] > 0) { %>
+        <li><span>Wednesday</span></li>
+      <% } %>
+
+      <% if (d[3] > 0) { %>
+        <li><span>Thursday</span></li>
+      <% } %>
+
+      <% if (d[4] > 0) { %>
+       <li><span>Friday</span></li>
+      <% } %>
+    </ul>
+    <h4>Allergies</h4>
+    <ul>
+      <% if (a[0] > 0) { %>
+        <li><span>Gluten</span></li>
+      <% } %>
+
+      <% if (a[1] > 0) { %>
+        <li><span>Peanuts</span></li>
+      <% } %>
+
+      <% if (a[2] > 0) { %>
+        <li><span>Soy</span></li>
+      <% } %>
+
+      <% if (a[3] > 0) { %>
+        <li><span>(Tree) nuts</span></li>
+      <% } %>
+    </ul>
+    <h4>Guests</h4>
+    <ul>
+        <li><span>Monday: <%- g[0]%></span></li>
+        <li><span>Tuesday: <%- g[1]%></span></li>
+        <li><span>Wednesday: <%- g[2]%></span></li>
+        <li><span>Thursday: <%- g[3]%></span></li>
+        <li><span>Friday: <%- g[4]%></span></li>
+    </ul>
+
+    <button id="finish-button">Finish →</button>
   </div>
 </main>
 

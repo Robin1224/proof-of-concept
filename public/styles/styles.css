@@ -32,12 +32,12 @@ body {
   margin: 3rem;
 }
 
-.logo > img {
+.logo img {
   width: 6rem;
   height: auto;
 }
 
-.logo > span {
+.logo span {
   font-size: var(--text-size-5);
   margin-top: 0.5rem;
   color: #abaaac;
@@ -159,7 +159,7 @@ input[type="checkbox"]::before {
   transform: scale(0);
   transition: 120ms transform ease-in-out;
   border-radius: 50%;
-  background-color: var(--black);
+  background-color: var(--highlight);
 }
 
 input[type="checkbox"]:checked::before {
@@ -167,7 +167,11 @@ input[type="checkbox"]:checked::before {
 }
 
 .options-form button {
-  margin-top: 4rem;
+  margin-top: 0rem;
+}
+
+#remember-options-label {
+  margin-top: 1rem;
 }
 
 .highlight-colour {

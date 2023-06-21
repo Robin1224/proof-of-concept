@@ -8,9 +8,17 @@ import validateQuery from "./helpers/validateQuery.js";
 
 import sheetdb from 'sheetdb-node';
 
+dotenv.config(); // initialize dotenv
+
+var config = {
+  address: process.env.API_ID,
+};
+
+// Create new client
+var sheetdbClient = sheetdb(config);
+
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
-dotenv.config(); // initialize dotenv
 
 const app = express(); // create an express app
 
@@ -60,6 +68,16 @@ app.get("/confirmation", (req, res) => {
   res.render("confirmation", data); // render the options.ejs file
 }
 );
+
+app.get("/api", (req, res) => {
+
+  sheetdbClient.create({ id: "INCREMENT", Monday: "Robin", Tuesday: "Robin", Gluten: "x" }, "Testsheet").then(function(data) {
+    console.log(data);
+  }, function(err){
+    console.log(err);
+  });
+
+});
 
 app.listen(port, () => { // starting the server and listening on port 3000
   console.log("Server is running on port 3000");

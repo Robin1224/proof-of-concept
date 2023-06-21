@@ -47,8 +47,8 @@ export default function validateQuery(page, query) {
 
       symbolConditions = [
         new RegExp("^[A-Za-z]+$").test(query.name),
-        new RegExp("^\\d+$").test(query.d),
-        new RegExp("^\\d+$").test(query.a),
+        new RegExp("^[01]+$").test(query.d),
+        new RegExp("^[01]+$").test(query.a),
         new RegExp("^\\d+$").test(query.g),
       ];
 
