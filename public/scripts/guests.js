@@ -1,4 +1,4 @@
-import { constructOptionsQuery } from './queryHandler.js';
+import { constructGuestsQuery } from './queryHandler.js';
 
 const form = document.getElementById("options-form");
 const nameValue = window.location.search;

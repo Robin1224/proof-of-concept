@@ -38,6 +38,13 @@ app.get("/options", (req, res) => {
 }
 );
 
+app.get("/guests", (req, res) => {
+  // const url = process.env.API_URL; // get the api url from the .env file
+  const data = req.query;
+  res.render("guests", data); // render the name.ejs file
+}
+);
+
 app.listen(port, () => { // starting the server and listening on port 3000
   console.log("Server is running on port 3000");
 });

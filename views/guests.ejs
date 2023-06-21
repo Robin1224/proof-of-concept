@@ -1,0 +1,79 @@
+<%- include("./partials/head.ejs") %> <%- include("./partials/sidebar.ejs",
+{page: "guests"}) %>
+
+<main class="options">
+  <div class="content-container">
+    <h2>Perfect, just one more question.</h2>
+    <h1>
+      Will you be bringing any <span class="highlight-colour">guests</span>?
+    </h1>
+
+    <form class="guests-form" id="guests-form">
+      <label>Monday</label>
+      <input
+        type="number"
+        min="0"
+        max="9"
+        step="1"
+        value="0"
+        required
+        name="guests-monday"
+        id="guests-monday"
+      />
+
+      <label>Tuesday</label>
+      <input
+        type="number"
+        min="0"
+        max="9"
+        step="1"
+        value="0"
+        required
+        name="guests-tuesday"
+        id="guests-tuesday"
+      />
+      
+      <label>Wednesday</label>
+      <input
+        type="number"
+        min="0"
+        max="9"
+        step="1"
+        value="0"
+        required
+        name="guests-wednesday"
+        id="guests-wednesday"
+      />
+
+      <label>Thursday</label>
+      <input
+        type="number"
+        min="0"
+        max="9"
+        step="1"
+        value="0"
+        required
+        name="guests-thursday"
+        id="guests-thursday"
+      />
+
+      <label>Friday</label>
+      <input
+        type="number"
+        min="0"
+        max="9"
+        step="1"
+        value="0"
+        required
+        name="guests-friday"
+        id="guests-friday"
+      />
+
+      <button type="submit">Continue →</button>
+    </form>
+  </div>
+</main>
+
+<script src="/scripts/options.js" type="module" defer></script>
+
+<%- include("./partials/foot.ejs") %>

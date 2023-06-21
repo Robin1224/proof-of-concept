@@ -11,16 +11,29 @@ export function constructOptionsQuery() {
   const nutsValue = document.getElementById("checkbox-nuts").checked;
 
   var query = window.location.search;
-  query = query + (mondayValue ? '&mo' : '');
-  query = query + (tuesdayValue ? '&tu' : '');
-  query = query + (wednesdayValue ? '&we' : '');
-  query = query + (thursdayValue ? '&th' : '');
-  query = query + (fridayValue ? '&fr' : '');
+  query = query + (mondayValue ? '&d=1' : '&d=0')
+                + (tuesdayValue ? '1' : '0')
+                + (wednesdayValue ? '1' : '0')
+                + (thursdayValue ? '1' : '0')
+                + (fridayValue ? '1' : '0');
 
-  query = query + (glutenValue ? '&gl' : '');
-  query = query + (peanutsValue ? '&pe' : '');
-  query = query + (soyValue ? '&so' : '');
-  query = query + (nutsValue ? '&nu' : '');
+  query = query + (glutenValue ? '&a=1' : '&a=0')
+                + (peanutsValue ? '1' : '0')
+                + (soyValue ? '1' : '0')
+                + (nutsValue ? '1' : '0');
+
+  return query;
+};
+
+export function constructGuestsQuery() {
+  const mondayValue = document.getElementById("guests-monday").value;
+  const tuesdayValue = document.getElementById("guests-tuesday").value;
+  const wednesdayValue = document.getElementById("guests-wednesday").value;
+  const thursdayValue = document.getElementById("guests-thursday").value;
+  const fridayValue = document.getElementById("guests-friday").value;
+
+  var query = window.location.search;
+  query = query + `g=${mondayValue}${tuesdayValue}${wednesdayValue}${thursdayValue}${fridayValue}`;
 
   return query;
 };
