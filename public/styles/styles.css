@@ -96,11 +96,17 @@ button[type="submit"] {
   margin-top: 2rem;
   cursor: pointer;
   width: 8rem;
+  height: 3rem;
+  margin-left: 2rem;
+}
+
+.name-form button {
+  height: 3rem;
+  margin-left: 2rem;
 }
 
 .name-form {
   display: flex;
-  flex-direction: column;
 }
 
 .name-form input[type="text"] {
