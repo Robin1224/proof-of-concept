@@ -5,6 +5,7 @@ import * as path from "path";
 import * as url from "url";
 import favicon from "serve-favicon";
 import validateQuery from "./helpers/validateQuery.js";
+import constructApiCall from "./helpers/constructApiCall.js";
 
 import sheetdb from 'sheetdb-node';
 
@@ -69,13 +70,22 @@ app.get("/confirmation", (req, res) => {
 }
 );
 
-app.get("/api", (req, res) => {
+app.get("/finish", (req, res) => {
 
-  sheetdbClient.create({ id: "INCREMENT", Monday: "Robin", Tuesday: "Robin", Gluten: "x" }, "Testsheet").then(function(data) {
+  if (!validateQuery("finish", req.query)) {
+    res.redirect("/");
+  };
+
+  const payload = constructApiCall(req.query);
+
+  sheetdbClient.create(payload, "Testsheet").then(function(data) {
     console.log(data);
+    res.redirect("/");
   }, function(err){
     console.log(err);
+    res.redirect("/");
   });
+
 
 });
 

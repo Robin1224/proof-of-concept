@@ -1,11 +1,8 @@
-import { constructOptionsQuery } from './queryHandler.js';
+const button = document.getElementById("finish-button");
 
-const form = document.getElementById("options-form");
-
-const optionsSubmit = event => {
-  event.preventDefault();
-  const URLquery = constructOptionsQuery();
-  window.location.href = `/guests/${URLquery}`;
+const finishHandler = () => {
+  const query = window.location.search
+  window.location.href = `/finish/${query}`;
 }
 
-form.addEventListener("submit", optionsSubmit);
+button.addEventListener("click", finishHandler());
