@@ -33,11 +33,7 @@ export function constructGuestsQuery() {
   const fridayValue = document.getElementById("guests-friday").value;
 
   var query = window.location.search;
-  query = query + `g=${mondayValue}${tuesdayValue}${wednesdayValue}${thursdayValue}${fridayValue}`;
+  query = query + `&g=${mondayValue}${tuesdayValue}${wednesdayValue}${thursdayValue}${fridayValue}`;
 
   return query;
-};
-
-export function parseQuery(query) {
-
 };

@@ -1,14 +1,11 @@
 import { constructGuestsQuery } from './queryHandler.js';
 
-const form = document.getElementById("options-form");
-const nameValue = window.location.search;
+const form = document.getElementById("guests-form");
 
-const optionsSubmit = event => {
+const guestsSubmit = event => {
   event.preventDefault();
-  const URLquery = constructOptionsQuery();
-  window.location.href = `/guests/${URLquery}`;
-}
+  const URLquery = constructGuestsQuery();
+  window.location.href = `/confirmation/${URLquery}`;
+};
 
-form.addEventListener("submit", optionsSubmit);
-
-console.log(nameValue);
+form.addEventListener("submit", guestsSubmit);

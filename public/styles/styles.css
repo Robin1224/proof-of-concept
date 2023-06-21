@@ -64,7 +64,7 @@ body {
 main {
   display: grid;
   place-content: center;
-  margin-left: 3rem;
+  margin-left: 5vw;
   height: 100vh;
 }
 
@@ -85,15 +85,34 @@ main {
   margin: 0;
 }
 
-.name-form {
-  display: flex;
+button[type="submit"] {
+  background-color: var(--gray-3);
+  color: var(--gray-1);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+  font-size: var(--text-size-4);
+  font-family: 'Helvetica Neue Light', sans-serif;
+  margin-top: 2rem;
+  cursor: pointer;
+  width: 8rem;
 }
 
-.name-form input {
-  border-radius: 1rem;
-  height: 1.3rem;
+.name-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-form input[type="text"] {
+  border-radius: 2rem;
+  height: 1.8rem;
   width: 24rem;
+  margin-top: 2rem;
   padding: 0.5rem;
+  padding-left: 1.3rem;
+  font-family: 'Helvetica Neue Light', sans-serif;
+  color: var(--gray-4);
+  font-size: var(--text-size-3);
 }
 
 .options-form {
@@ -102,14 +121,20 @@ main {
   margin-top: 4rem;
 }
 
-.options-form label {
+.options-form label,
+.name-form label {
   font-size: var(--text-size-4);
   display: grid;
   grid-template-columns: 1em auto;
   gap: 0.5em;
 }
 
-.options-form input[type="checkbox"] {
+.name-form label {
+  margin-left: 1rem;
+  margin-top: 0.4rem;
+}
+
+input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
   /* For iOS < 15 to remove gradient background */
@@ -127,7 +152,7 @@ main {
   place-content: center;
 }
 
-.options-form input[type="checkbox"]::before {
+input[type="checkbox"]::before {
   content: "";
   width: 0.55rem;
   height: 0.55rem;
@@ -137,7 +162,7 @@ main {
   background-color: var(--black);
 }
 
-.options-form input[type="checkbox"]:checked::before {
+input[type="checkbox"]:checked::before {
   transform: scale(1);
 }
 

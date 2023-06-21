@@ -4,6 +4,7 @@ import { axiosGet, axiosPost } from "./helpers/axiosWrapper.js";
 import * as path from "path";
 import * as url from "url";
 import favicon from "serve-favicon";
+import validateQuery from "./helpers/validateQuery.js";
 
 import sheetdb from 'sheetdb-node';
 
@@ -17,7 +18,6 @@ app.use(favicon(path.join(__dirname, 'public/assets/images', 'fried-rice.ico')))
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
-
 
 app.use(express.static(path.resolve("public")));
 
@@ -33,6 +33,9 @@ app.get("/", (req, res) => {
 
 app.get("/options", (req, res) => {
   // const url = process.env.API_URL; // get the api url from the .env file
+  if (!validateQuery("options", req.query)) {
+    res.redirect("/");
+  };
   const name = req.query.name;
   res.render("options", { name: name }); // render the options.ejs file
 }
@@ -40,8 +43,21 @@ app.get("/options", (req, res) => {
 
 app.get("/guests", (req, res) => {
   // const url = process.env.API_URL; // get the api url from the .env file
+  if (!validateQuery("guests", req.query)) {
+    res.redirect("/");
+  };
   const data = req.query;
   res.render("guests", data); // render the options.ejs file
+}
+);
+
+app.get("/confirmation", (req, res) => {
+  // const url = process.env.API_URL; // get the api url from the .env file
+  if (!validateQuery("confirmation", req.query)) {
+    res.redirect("/");
+  };
+  const data = req.query;
+  res.render("confirmation", data); // render the options.ejs file
 }
 );
 

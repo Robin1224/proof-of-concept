@@ -1,0 +1,21 @@
+<%- include("./partials/head.ejs") %> <%- include("./partials/sidebar.ejs",
+{page: "guests"}) %>
+
+<main>
+  <div class="content-container">
+    <h4 class="confirmation-name">
+      <span><%- data.name %></span>
+    </h4>
+    <h4 class="confirmation-days">
+      <% Object.keys(data.d).forEach(key => { %>
+        <% console.log(key, data.d[key]); %>
+       
+      <% }) %>
+      <span><%- data.name %></span>
+    </h4>
+  </div>
+</main>
+
+<!-- <script src="/scripts/confirmation.js" type="module" defer></script> -->
+
+<%- include("./partials/foot.ejs") %>
